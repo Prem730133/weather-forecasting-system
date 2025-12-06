@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    h1 {
+      margin: 20px;
+      font-size: 28px;
+      font-family: 'Acme', sans-serif;
+    }
+
+    h2 {
+      margin: 15px 0;
+      font-size: 24px;
+      position: relative;
+      cursor: pointer;
+      transition: 1s;
+    }
+
+    h2::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #73a6dc;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 1s ease-in-out;
+    }
+
+    h2:hover {
+      color: #ffffff;
+      background-color: black;
+      font-size: bold;
+      font-family: 'Acme', sans-serif;
+      text-align: center;
+    }
+
+    h2:hover::before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .nav-item:hover {
+      color: black;
+      font-weight: bold;
+      transition: all 1s;
+    }
+
+    .content {
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .iframe-container {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg" style="background-color:steelblue ;" data-bs-theme="light">
+    <div class="container-fluid">
+      <img src="./logo.png" alt="logo" style="height: 75px; width: 75px;">
+      <a class="navbar-brand" href="#">Weather forecast</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+        aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 100px; gap:75px; font-size: 20px;">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./usage.html">Usage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="content">
+    <h2>Importance of Weather Forecasting</h2>
+    <div class="point">
+      <p>
+        <strong>Agriculture:</strong> Farmers rely on weather forecasts to plan their planting and harvesting.
+        Temperature and precipitation greatly affect crop growth. Accurate forecasts help minimize losses.
+      </p>
+    </div>
+    <div class="point">
+      <p>
+        <strong>Transportation:</strong> Weather forecasts assist in planning safe and efficient transportation,
+        including air travel, maritime navigation, and road conditions, ensuring passenger safety.
+      </p>
+    </div>
+    <hr>
+    <h2>Types of Weather Forecasting</h2>
+    <p>
+      <strong>Short Range Forecasting:</strong> This type of forecasting covers 1-2 days and is essential for
+      daily activity planning, such as deciding what to wear or whether to carry an umbrella.
+    </p>
+    <p>
+      <strong>Medium Range Forecasting:</strong> These forecasts last 3-4 days to 2 weeks and are critical for
+      business budgeting and development. Accurate medium-term forecasting is vital to avoid overspending and
+      unsold stock in organizations.
+    </p>
+    <p>
+      <strong>Long-Range Forecasts:</strong> These forecasts are for times longer than four weeks and are
+      important for major strategic decisions and resource allocation. While they provide valuable insights, they
+      may have inherent uncertainties.
+    </p>
+    <hr>
+    <h2>Mean Precipitation Based on Global High Resolution Climate Data (CHELSA)</h2>
+    <p>
+      In meteorology, precipitation refers to any outcome of atmospheric water vapor condensation that descends
+      from clouds under the influence of gravity. Precipitation takes various forms, including drizzle, rain,
+      sleet, snow, ice pellets, graupel, and hail. It occurs when a segment of the atmosphere reaches a state of
+      saturation with water vapor, achieving 100% relative humidity. This saturation leads to the condensation of
+      water vapor, resulting in the process known as precipitation, where water droplets or solid particles fall
+      from the atmosphere.
+    </p>
+    <p>
+      It's important to note that fog and mist, while involving water vapor, are not considered forms of
+      precipitation because the water vapor in these cases doesn't condense significantly enough to fall as
+      droplets. The air can become saturated through two primary mechanisms: either by cooling the air or by
+      introducing additional water vapor into the atmosphere.
+    </p>
+    <p>
+      The formation of precipitation involves the aggregation of smaller water droplets or ice crystals within
+      clouds, as they collide and merge. Additionally, brief, intense periods of rain occurring in isolated
+      regions are commonly referred to as showers.
+    </p>
+    <div class="iframe-container">
+      <iframe
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Daily_mean_precipitation.gif/488px-Daily_mean_precipitation.gif"
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+
+</html>
